@@ -8,13 +8,13 @@ RUN dnf install -y java-17-openjdk
 WORKDIR /app
 
 # Copy the compiled JAR file into the container
-COPY build/libs/donations_service-0.0.1-SNAPSHOT.jar donations_service.jar
+COPY build/libs/streaming_service-0.0.1-SNAPSHOT.jar streaming_service.jar
 
 # Expose the application's port
-EXPOSE 8084
+EXPOSE 8085
 
 # Run the application
-ENTRYPOINT ["java", "-jar", "donations_service.jar"]
+ENTRYPOINT ["java", "-jar", "streaming_service.jar"]
 
-#docker build -t ghcr.io/pibbletv/pibbletv-donations-service:latest -f Dockerfile .
-#docker run -d --name ghcr.io/pibbletv/pibbletv-donations-service:latest -p 8084:8084 follows_service
+#docker build -t ghcr.io/pibbletv/pibbletv-streaming-service:latest -f Dockerfile .
+#docker run -d --name -p 8085:8085 ghcr.io/pibbletv/pibbletv-streaming-service:latest

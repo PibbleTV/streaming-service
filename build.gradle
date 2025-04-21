@@ -2,6 +2,26 @@ plugins {
     id 'java'
     id 'org.springframework.boot' version '3.4.4'
     id 'io.spring.dependency-management' version '1.1.7'
+    id "org.sonarqube" version "6.0.1.5171"
+    id 'jacoco'
+}
+
+sonar {
+    properties {
+        property "sonar.java.coveragePlugin", "jacoco"
+        property "sonar.qualitygate.wait", true
+        property "sonar.coverage.jacoco.xmlReportPaths", "build/reports/jacoco/test/jacocoTestReport.xml"
+        property "sonar.coverage.exclusions", [
+                'src/**/com/pibbletv/streaming_service/controller/StreamController.java',
+                'src/**/com/pibbletv/streaming_service/business/converters/StreamConverter.java',
+                'src/**/com/pibbletv/streaming_service/StreamingServiceApplication.java',
+        ]
+        property "sonar.cpd.exclusions", [
+                'src/**/com/pibbletv/streaming_service/controller/StreamController.java',
+                'src/**/com/pibbletv/streaming_service/business/converters/StreamConverter.java',
+                'src/**/com/pibbletv/streaming_service/StreamingServiceApplication.java',
+        ]
+    }
 }
 
 group = 'com.pibbletv'
@@ -25,6 +45,8 @@ repositories {
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-r2dbc'
+    implementation "org.springframework.cloud:spring-cloud-starter-netflix-eureka-client:4.2.1"
+    implementation 'io.asyncer:r2dbc-mysql:1.0.2'
     implementation 'org.springframework.boot:spring-boot-starter-webflux'
     compileOnly 'org.projectlombok:lombok'
     runtimeOnly 'com.h2database:h2'
@@ -33,6 +55,23 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'io.projectreactor:reactor-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+jacoco {
+    toolVersion = "0.8.7"
+}
+
+jacocoTestReport {
+    dependsOn test
+    reports {
+        xml.required = true
+        html.required = true
+    }
+}
+
+test {
+    useJUnitPlatform()
+    finalizedBy jacocoTestReport
 }
 
 tasks.named('test') {
