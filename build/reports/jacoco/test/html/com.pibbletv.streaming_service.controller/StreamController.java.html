@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>StreamController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">streaming_service</a> &gt; <a href="index.source.html" class="el_package">com.pibbletv.streaming_service.controller</a> &gt; <span class="el_source">StreamController.java</span></div><h1>StreamController.java</h1><pre class="source lang-java linenums">package com.pibbletv.streaming_service.controller;
+
+import com.pibbletv.streaming_service.domain.Stream;
+import lombok.AllArgsConstructor;
+import org.springframework.web.bind.annotation.*;
+import com.pibbletv.streaming_service.business.interfaces.StreamService;
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
+
+
+@RestController
+@AllArgsConstructor
+@RequestMapping(&quot;/stream&quot;)
+public class StreamController {
+
+    private final StreamService streamService;
+
+    @GetMapping(value = &quot;/getPerKeyword&quot;)
+    public Flux&lt;Stream&gt; getStreamsPerKeyword(@RequestParam String keyword) {
+<span class="nc" id="L20">        return streamService.getStreamsPerKeyword(keyword);</span>
+    }
+
+    @GetMapping(value = &quot;/getPerCategory&quot;)
+    public Flux&lt;Stream&gt; getStreamsPerCategory(@RequestParam Long categoryId) {
+<span class="nc" id="L25">        return streamService.getStreamsPerCategory(categoryId);</span>
+    }
+
+    @GetMapping(value = &quot;/getStream&quot;)
+    public Mono&lt;Stream&gt; getStream(@RequestParam Long streamId) {
+<span class="nc" id="L30">        return streamService.getStream(streamId);</span>
+    }
+
+    @GetMapping(value = &quot;/getAll&quot;)
+    public Flux&lt;Stream&gt; getAllStreams() {
+<span class="nc" id="L35">        return streamService.getAllStreams();</span>
+    }
+
+    @PostMapping(value = &quot;/addStream&quot;)
+    public Mono&lt;Void&gt; addStream(@RequestBody Stream stream) {
+<span class="nc" id="L40">        return streamService.addStream(stream);</span>
+    }
+
+    @PutMapping(value = &quot;/updateStream&quot;)
+    public Mono&lt;Void&gt; updateStream(@RequestBody Stream stream) {
+<span class="nc" id="L45">        return streamService.updateStream(stream);</span>
+    }
+
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
