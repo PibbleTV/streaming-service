@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.pibbletv.streaming_service.integration.StreamingControllerTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2025-05-09T23:43:56.153Z" hostname="DESKTOP-NS6POVE" time="0.072">
+  <properties/>
+  <testcase name="updateStream_shouldReturn400_whenStreamIdIsNull()" classname="com.pibbletv.streaming_service.integration.StreamingControllerTest" time="0.072">
+    <failure message="org.mockito.exceptions.misusing.MissingMethodInvocationException: &#10;when() requires an argument which has to be 'a method call on a mock'.&#10;For example:&#10;    when(mock.getArticles()).thenReturn(articles);&#10;&#10;Also, this error might show up because:&#10;1. you stub either of: final/private/native/equals()/hashCode() methods.&#10;   Those methods *cannot* be stubbed/verified.&#10;   Mocking methods declared on non-public parent classes is not supported.&#10;2. inside when() you don't call method on mock but on some other object.&#10;" type="org.mockito.exceptions.misusing.MissingMethodInvocationException">org.mockito.exceptions.misusing.MissingMethodInvocationException: 
+when() requires an argument which has to be 'a method call on a mock'.
+For example:
+    when(mock.getArticles()).thenReturn(articles);
+
+Also, this error might show up because:
+1. you stub either of: final/private/native/equals()/hashCode() methods.
+   Those methods *cannot* be stubbed/verified.
+   Mocking methods declared on non-public parent classes is not supported.
+2. inside when() you don't call method on mock but on some other object.
+
+	at app//com.pibbletv.streaming_service.integration.StreamingControllerTest.updateStream_shouldReturn400_whenStreamIdIsNull(StreamingControllerTest.java:325)
+	at java.base@17.0.14/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base@17.0.14/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base@17.0.14/java.util.ArrayList.forEach(ArrayList.java:1511)
+</failure>
+  </testcase>
+  <system-out><![CDATA[01:43:47.428 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.pibbletv.streaming_service.integration.StreamingControllerTest]: StreamingControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+01:43:47.683 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.pibbletv.streaming_service.StreamingServiceApplication for test class com.pibbletv.streaming_service.integration.StreamingControllerTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.4)
+
+2025-05-10T01:43:51.110+02:00  INFO 2392 --- [streaming-service] [    Test worker] c.p.s.i.StreamingControllerTest          : Starting StreamingControllerTest using Java 17.0.14 with PID 2392 (started by hristo in D:\Individual Assignment\PibbleTV-Backend\streaming-service)
+2025-05-10T01:43:51.114+02:00  INFO 2392 --- [streaming-service] [    Test worker] c.p.s.i.StreamingControllerTest          : The following 1 profile is active: "dev"
+2025-05-10T01:43:52.858+02:00  INFO 2392 --- [streaming-service] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2025-05-10T01:43:53.239+02:00  INFO 2392 --- [streaming-service] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 363 ms. Found 1 R2DBC repository interface.
+2025-05-10T01:43:53.566+02:00  INFO 2392 --- [streaming-service] [    Test worker] o.s.cloud.context.scope.GenericScope     : BeanFactory id=9edccc43-115b-3b03-ba92-49edf1d3bbbb
+2025-05-10T01:43:55.745+02:00  INFO 2392 --- [streaming-service] [    Test worker] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2025-05-10T01:43:55.988+02:00  WARN 2392 --- [streaming-service] [    Test worker] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-05-10T01:43:56.144+02:00  INFO 2392 --- [streaming-service] [    Test worker] c.p.s.i.StreamingControllerTest          : Started StreamingControllerTest in 6.024 seconds (process running for 10.771)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
