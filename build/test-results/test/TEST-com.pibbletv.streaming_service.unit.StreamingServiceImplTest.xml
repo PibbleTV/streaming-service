@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.pibbletv.streaming_service.unit.StreamingServiceImplTest" tests="11" skipped="0" failures="0" errors="0" timestamp="2025-05-13T14:22:44.655Z" hostname="DESKTOP-NS6POVE" time="0.629">
+  <properties/>
+  <testcase name="testUpdateStream_MissingId()" classname="com.pibbletv.streaming_service.unit.StreamingServiceImplTest" time="0.482"/>
+  <testcase name="testGetStreamsPerKeyword_NotFound()" classname="com.pibbletv.streaming_service.unit.StreamingServiceImplTest" time="0.063"/>
+  <testcase name="testGetAllStreams_StreamsObtainedSuccessfully()" classname="com.pibbletv.streaming_service.unit.StreamingServiceImplTest" time="0.011"/>
+  <testcase name="testAddStream_SaveFails()" classname="com.pibbletv.streaming_service.unit.StreamingServiceImplTest" time="0.008"/>
+  <testcase name="testUpdateStream_DoesNotExist()" classname="com.pibbletv.streaming_service.unit.StreamingServiceImplTest" time="0.015"/>
+  <testcase name="testGetStream_ReturnedSuccessfully()" classname="com.pibbletv.streaming_service.unit.StreamingServiceImplTest" time="0.025"/>
+  <testcase name="testGetStreamsPerCategory_ReturnedSuccessfully()" classname="com.pibbletv.streaming_service.unit.StreamingServiceImplTest" time="0.004"/>
+  <testcase name="testUpdateStream_SuccessfullyUpdated()" classname="com.pibbletv.streaming_service.unit.StreamingServiceImplTest" time="0.005"/>
+  <testcase name="testAddStream_SuccessfullyAddingStream()" classname="com.pibbletv.streaming_service.unit.StreamingServiceImplTest" time="0.002"/>
+  <testcase name="testGetStream_NotFound()" classname="com.pibbletv.streaming_service.unit.StreamingServiceImplTest" time="0.002"/>
+  <testcase name="testGetStreamsPerKeyword_FoundSuccessfully()" classname="com.pibbletv.streaming_service.unit.StreamingServiceImplTest" time="0.003"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
