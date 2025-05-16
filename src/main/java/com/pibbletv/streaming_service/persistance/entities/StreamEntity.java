@@ -1,5 +1,6 @@
 package com.pibbletv.streaming_service.persistance.entities;
 
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -9,6 +10,7 @@ import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 @Data
 @Builder
@@ -20,20 +22,23 @@ public class StreamEntity {
     @Id
     private Long id;
 
-    @Column("userId")
-    private Long userId;
-
+    @NotNull
     @Column("streamKey")
-    private Long streamKey;
+    private UUID streamKey;
+
+    @NotNull
+    @Column("userId")
+    private UUID userId;
+
+    @NotNull
+    @Column("categoryId")
+    private UUID categoryId;
 
     @Column("streamName")
     private String streamName;
 
     @Column("description")
     private String description;
-
-    @Column("categoryId")
-    private Long categoryId;
 
     @Column("watching")
     private Integer watching;

@@ -11,6 +11,8 @@ import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+import java.util.UUID;
+
 
 @Service
 @AllArgsConstructor
@@ -25,16 +27,16 @@ public class StreamServiceImpl implements StreamService {
     }
 
     @Override
-    public Flux<Stream> getStreamsPerCategory(Long categoryId)
+    public Flux<Stream> getStreamsPerCategory(UUID categoryId)
     {
         return streamRepository.findByCategoryId(categoryId).map(StreamConverter::convertToObject);
     }
 
 
     @Override
-    public Mono<Stream> getStream(Long streamId)
+    public Mono<Stream> getStream(UUID streamKey)
     {
-        return streamRepository.findById(streamId).map(StreamConverter::convertToObject);
+        return streamRepository.findByStreamKey(streamKey).map(StreamConverter::convertToObject);
     }
 
     @Override
