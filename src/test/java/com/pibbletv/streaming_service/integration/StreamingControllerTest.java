@@ -1,38 +1,38 @@
-package com.pibbletv.streaming_service.integration;
-
-import com.pibbletv.streaming_service.business.converters.StreamConverter;
-import com.pibbletv.streaming_service.business.implementations.StreamServiceImpl;
-import com.pibbletv.streaming_service.domain.Stream;
-import com.pibbletv.streaming_service.persistance.entities.StreamEntity;
-import com.pibbletv.streaming_service.persistance.repository.StreamRepository;
-import org.junit.jupiter.api.Test;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.reactive.AutoConfigureWebTestClient;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.http.MediaType;
-import org.springframework.test.web.reactive.server.WebTestClient;
-import reactor.core.publisher.Flux;
-import reactor.core.publisher.Mono;
-
-import java.time.LocalDateTime;
-
-import static org.mockito.Mockito.when;
-
-@SpringBootTest
-@AutoConfigureWebTestClient
-public class StreamingControllerTest {
-
-    @Autowired
-    private WebTestClient webTestClient;
-
-    @InjectMocks
-    private StreamServiceImpl streamService;
-
-    @Mock
-    private StreamRepository streamRepository;
-
+//package com.pibbletv.streaming_service.integration;
+//
+//import com.pibbletv.streaming_service.business.converters.StreamConverter;
+//import com.pibbletv.streaming_service.business.implementations.StreamServiceImpl;
+//import com.pibbletv.streaming_service.domain.Stream;
+//import com.pibbletv.streaming_service.persistance.entities.StreamEntity;
+//import com.pibbletv.streaming_service.persistance.repository.StreamRepository;
+//import org.junit.jupiter.api.Test;
+//import org.mockito.InjectMocks;
+//import org.mockito.Mock;
+//import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.boot.test.autoconfigure.web.reactive.AutoConfigureWebTestClient;
+//import org.springframework.boot.test.context.SpringBootTest;
+//import org.springframework.http.MediaType;
+//import org.springframework.test.web.reactive.server.WebTestClient;
+//import reactor.core.publisher.Flux;
+//import reactor.core.publisher.Mono;
+//
+//import java.time.LocalDateTime;
+//
+//import static org.mockito.Mockito.when;
+//
+//@SpringBootTest
+//@AutoConfigureWebTestClient
+//public class StreamingControllerTest {
+//
+//    @Autowired
+//    private WebTestClient webTestClient;
+//
+//    @InjectMocks
+//    private StreamServiceImpl streamService;
+//
+//    @Mock
+//    private StreamRepository streamRepository;
+//
 //    @Test
 //    void getStreamsPerKeyword_shouldReturnStreams_whenKeywordIsValid() {
 //        String keyword = "gaming";
@@ -332,4 +332,4 @@ public class StreamingControllerTest {
 //                .exchange()
 //                .expectStatus().isBadRequest();
 //    }
-}
+//}
