@@ -7,6 +7,8 @@ import com.pibbletv.streaming_service.business.interfaces.StreamService;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+import java.util.UUID;
+
 
 @RestController
 @AllArgsConstructor
@@ -21,12 +23,12 @@ public class StreamController {
     }
 
     @GetMapping(value = "/getPerCategory")
-    public Flux<Stream> getStreamsPerCategory(@RequestParam Long categoryId) {
+    public Flux<Stream> getStreamsPerCategory(@RequestParam UUID categoryId) {
         return streamService.getStreamsPerCategory(categoryId);
     }
 
     @GetMapping(value = "/getStream")
-    public Mono<Stream> getStream(@RequestParam Long streamId) {
+    public Mono<Stream> getStream(@RequestParam UUID streamId) {
         return streamService.getStream(streamId);
     }
 

@@ -13,11 +13,11 @@ public final class StreamConverter {
 
         return Stream.builder()
                 .id(entity.getId())
-                .userId(entity.getUserId())
                 .streamKey(entity.getStreamKey())
+                .userId(entity.getUserId())
+                .categoryId(entity.getCategoryId())
                 .streamName(entity.getStreamName())
                 .description(entity.getDescription())
-                .categoryId(entity.getCategoryId())
                 .watching(entity.getWatching())
                 .startedAt(entity.getStartedAt())
                 .build();
@@ -28,11 +28,11 @@ public final class StreamConverter {
 
         return StreamEntity.builder()
                 .id(stream.getId())
-                .userId(stream.getUserId())
                 .streamKey(stream.getStreamKey())
+                .userId(stream.getUserId())
+                .categoryId(stream.getCategoryId())
                 .streamName(stream.getStreamName())
                 .description(stream.getDescription())
-                .categoryId(stream.getCategoryId())
                 .watching(stream.getWatching())
                 .startedAt(stream.getStartedAt())
                 .build();

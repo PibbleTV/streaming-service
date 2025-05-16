@@ -6,13 +6,15 @@ import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+import java.util.UUID;
+
 public interface StreamService {
 
     Flux<Stream> getStreamsPerKeyword(String keyword);
 
-    Flux<Stream> getStreamsPerCategory(Long categoryId);
+    Flux<Stream> getStreamsPerCategory(UUID categoryId);
 
-    Mono<Stream> getStream(Long streamId);
+    Mono<Stream> getStream(UUID streamId);
 
     Flux<Stream> getAllStreams();
 

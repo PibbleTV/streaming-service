@@ -6,6 +6,9 @@ import org.springframework.data.repository.reactive.ReactiveCrudRepository;
 import com.pibbletv.streaming_service.persistance.entities.StreamEntity;
 import org.springframework.stereotype.Repository;
 import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
+
+import java.util.UUID;
 
 @Repository
 public interface StreamRepository extends ReactiveCrudRepository<StreamEntity, Long> {
@@ -13,5 +16,7 @@ public interface StreamRepository extends ReactiveCrudRepository<StreamEntity, L
     @Query("SELECT * FROM streams WHERE LOWER(stream_name) LIKE LOWER(CONCAT('%', :keyword, '%')) OR LOWER(description) LIKE LOWER(CONCAT('%', :keyword, '%'))")
     Flux<StreamEntity> findByKeyword(@Param("keyword") String keyword);
 
-    Flux<StreamEntity> findByCategoryId(Long categoryId);
+    Flux<StreamEntity> findByCategoryId(UUID categoryId);
+
+    Mono<StreamEntity> findByStreamKey(UUID streamKey);
 }
