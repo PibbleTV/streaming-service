@@ -8,7 +8,6 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.relational.core.mapping.Column;
 
 import java.time.LocalDateTime;
-import java.util.UUID;
 
 @Data
 @Builder
@@ -18,11 +17,11 @@ public class Stream {
 
     private Long id;
 
-    private UUID streamKey;
+    private String streamKey;
 
-    private UUID userId;
+    private String userId;
 
-    private UUID categoryId;
+    private String categoryId;
 
     private String streamName;
 

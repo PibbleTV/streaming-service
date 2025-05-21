@@ -27,14 +27,14 @@ public class StreamServiceImpl implements StreamService {
     }
 
     @Override
-    public Flux<Stream> getStreamsPerCategory(UUID categoryId)
+    public Flux<Stream> getStreamsPerCategory(String categoryId)
     {
         return streamRepository.findByCategoryId(categoryId).map(StreamConverter::convertToObject);
     }
 
 
     @Override
-    public Mono<Stream> getStream(UUID streamKey)
+    public Mono<Stream> getStream(String streamKey)
     {
         return streamRepository.findByStreamKey(streamKey).map(StreamConverter::convertToObject);
     }

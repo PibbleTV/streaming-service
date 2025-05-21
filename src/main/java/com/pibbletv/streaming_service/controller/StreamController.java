@@ -23,12 +23,12 @@ public class StreamController {
     }
 
     @GetMapping(value = "/getPerCategory")
-    public Flux<Stream> getStreamsPerCategory(@RequestParam UUID categoryId) {
+    public Flux<Stream> getStreamsPerCategory(@RequestParam String categoryId) {
         return streamService.getStreamsPerCategory(categoryId);
     }
 
     @GetMapping(value = "/getStream")
-    public Mono<Stream> getStream(@RequestParam UUID streamId) {
+    public Mono<Stream> getStream(@RequestParam String streamId) {
         return streamService.getStream(streamId);
     }
 
