@@ -25,15 +25,15 @@ public class StreamEntity {
 
     @NotNull
     @Column("streamKey")
-    private UUID streamKey;
+    private String streamKey;
 
     @NotNull
     @Column("userId")
-    private UUID userId;
+    private String userId;
 
     @NotNull
     @Column("categoryId")
-    private UUID categoryId;
+    private String categoryId;
 
     @Column("streamName")
     private String streamName;

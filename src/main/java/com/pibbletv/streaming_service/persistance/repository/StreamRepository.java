@@ -8,15 +8,13 @@ import org.springframework.stereotype.Repository;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-import java.util.UUID;
-
 @Repository
 public interface StreamRepository extends ReactiveCrudRepository<StreamEntity, Long> {
 
     @Query("SELECT * FROM streams WHERE LOWER(stream_name) LIKE LOWER(CONCAT('%', :keyword, '%')) OR LOWER(description) LIKE LOWER(CONCAT('%', :keyword, '%'))")
     Flux<StreamEntity> findByKeyword(@Param("keyword") String keyword);
 
-    Flux<StreamEntity> findByCategoryId(UUID categoryId);
+    Flux<StreamEntity> findByCategoryId(String categoryId);
 
-    Mono<StreamEntity> findByStreamKey(UUID streamKey);
+    Mono<StreamEntity> findByStreamKey(String streamKey);
 }

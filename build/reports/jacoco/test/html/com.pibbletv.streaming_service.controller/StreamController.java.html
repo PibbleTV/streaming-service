@@ -7,6 +7,8 @@ import com.pibbletv.streaming_service.business.interfaces.StreamService;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+import java.util.UUID;
+
 
 @RestController
 @AllArgsConstructor
@@ -17,32 +19,32 @@ public class StreamController {
 
     @GetMapping(value = &quot;/getPerKeyword&quot;)
     public Flux&lt;Stream&gt; getStreamsPerKeyword(@RequestParam String keyword) {
-<span class="nc" id="L20">        return streamService.getStreamsPerKeyword(keyword);</span>
+<span class="nc" id="L22">        return streamService.getStreamsPerKeyword(keyword);</span>
     }
 
     @GetMapping(value = &quot;/getPerCategory&quot;)
-    public Flux&lt;Stream&gt; getStreamsPerCategory(@RequestParam Long categoryId) {
-<span class="nc" id="L25">        return streamService.getStreamsPerCategory(categoryId);</span>
+    public Flux&lt;Stream&gt; getStreamsPerCategory(@RequestParam UUID categoryId) {
+<span class="nc" id="L27">        return streamService.getStreamsPerCategory(categoryId);</span>
     }
 
     @GetMapping(value = &quot;/getStream&quot;)
-    public Mono&lt;Stream&gt; getStream(@RequestParam Long streamId) {
-<span class="nc" id="L30">        return streamService.getStream(streamId);</span>
+    public Mono&lt;Stream&gt; getStream(@RequestParam UUID streamId) {
+<span class="nc" id="L32">        return streamService.getStream(streamId);</span>
     }
 
     @GetMapping(value = &quot;/getAll&quot;)
     public Flux&lt;Stream&gt; getAllStreams() {
-<span class="nc" id="L35">        return streamService.getAllStreams();</span>
+<span class="nc" id="L37">        return streamService.getAllStreams();</span>
     }
 
     @PostMapping(value = &quot;/addStream&quot;)
     public Mono&lt;Void&gt; addStream(@RequestBody Stream stream) {
-<span class="nc" id="L40">        return streamService.addStream(stream);</span>
+<span class="nc" id="L42">        return streamService.addStream(stream);</span>
     }
 
     @PutMapping(value = &quot;/updateStream&quot;)
     public Mono&lt;Void&gt; updateStream(@RequestBody Stream stream) {
-<span class="nc" id="L45">        return streamService.updateStream(stream);</span>
+<span class="nc" id="L47">        return streamService.updateStream(stream);</span>
     }
 
 
