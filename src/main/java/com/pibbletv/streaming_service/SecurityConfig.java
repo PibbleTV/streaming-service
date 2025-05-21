@@ -1,6 +1,6 @@
 package com.pibbletv.streaming_service;
 
-//import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Bean;//import org.springframework.context.annotation.Bean;
 //import org.springframework.context.annotation.Configuration;
 //import org.springframework.security.config.Customizer;
 //import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
@@ -13,18 +13,17 @@ package com.pibbletv.streaming_service;
 //@Configuration
 //public class SecurityConfig {
 //
-//    @Bean
-//    public SecurityWebFilterChain securityWebFilterChain(ServerHttpSecurity http) {
-//
-//        http
-//                .csrf(ServerHttpSecurity.CsrfSpec::disable)
-//                .authorizeExchange(exchanges -> exchanges
-//                        .pathMatchers("/eureka/**").authenticated()
-//                        .anyExchange().authenticated()
-//                )
-//                .httpBasic(Customizer.withDefaults());
-////                .formLogin(ServerHttpSecurity.FormLoginSpec::disable);
-//
-//        return http.build();
-//    }
+    //@Bean
+    //public SecurityWebFilterChain securityWebFilterChain(ServerHttpSecurity http) {
+    //
+    //    http
+    //            .csrf(ServerHttpSecurity.CsrfSpec::disable)
+    //            .authorizeExchange(exchanges -> exchanges
+    //                    .anyExchange().permitAll()
+    //            )
+    //            .httpBasic(ServerHttpSecurity.HttpBasicSpec::disable)
+    //            .formLogin(ServerHttpSecurity.FormLoginSpec::disable);
+    //
+    //    return http.build();
+    //}
 //}
